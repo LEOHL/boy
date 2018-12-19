@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Swiper demo</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="swiper.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Swiper -->
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="images/1.jpg" alt=""></div>
+            <div class="swiper-slide"><img src="images/2.jpg" alt=""></div>
+            <div class="swiper-slide">
+               <ul>
+                    <li>没有什么比时间更具有说服力了，因为时间无需通知我们就可以改变一切。
+                        ---《活着》
+                    </li>
+                    <li>做人不能忘记四条，话不要说错，床不要睡错，门槛不要踏错，口袋不要摸错。
+                        ---《活着》
+                    </li>
+                    <li>我不再装模作样地拥有很多朋友，而是回到了孤单之中，以真正的我开始了独自的生活。有时我也会因为寂寞而难以忍受空虚的折磨，但我宁愿以这样的方式来维护自己的自尊，也不愿以耻辱为代价去换取那种表面的朋友。
+                        ---《在细雨中呼喊》
+                    </li>
+                    <li>
+                        无论多么美好的体验都会成为过去，无论多么深切的悲哀也会落在昨天，一如时光的流逝毫不留情。生命就像是一个疗伤的过程，我们受伤，痊愈，再受伤，再痊愈。每一次的痊愈好像都是为了迎接下一次的受伤。或许总要彻彻底底的绝望一次，才能重新再活一次。
+                        ---《第七天》
+                    </li>
+                    <li>
+                        当我们凶狠地对待这个世界时，这个世界突然变得温文尔雅了。
+                        ---《在细雨中呼喊》
+                    </li>
+                    <li>
+                        事情都是被逼出来的，人只有被逼上绝路了，才会有办法，没上绝路以前，不是没想到办法，就是想到了也不知道该不该去做。
+                        ---《许三观卖血记》
+                    </li>
+                    <li>
+                        当一个人独自坐在公园的长椅上，在日落时让嘴角露出一丝微笑，他孤独的形象似乎值得同情，然而谁又能体会到他此刻的美妙旅程？他正坐在回忆的马车里，他的生活重新开始了，而且这一次的生活是他自己精心挑选的。
+                        ---《在细雨中呼喊》
+                    </li>
+                    <li>
+                        这就是人世间，有一个人走向死亡，可是无限眷恋晚霞映照下的生活；另两个人寻欢作乐，可是不知道落日的余晖有多么的美丽。
+                        ---《兄弟》
+                    </li>
+                    <li>
+                        李光头，你以前对我说过：“就算天翻地覆慷而慨了，我们还是兄弟；现在我要对你说：就是生离死别了，我们还是兄弟。”
+                        ---《兄弟》
+                    </li>
+                    <li>
+                        一个西方人活四百年才能经历这样两个天壤之别的时代，一个中国人只需四十年就经历了。
+                        ---《兄弟》
+                    </li>
+                    <li>
+                        他写得很吃力了，有很多句子他不知道写得对不对，有很多字他都不会写了。他伤感地想起自己20岁的时候，曾经那么喜欢读书喜欢文学，他曾经写下过一篇小说，李光头读完后大声赞扬，这么多年下来，生活压得他喘不过气来，他不读书不读报，如今突然发现自己连信都不会写了。
+                        ---《兄弟》
+                    </li>
+                    <li>
+                        三天下来，林红收了一百多个信封，群众说她收了几百万元，群众说她数钱时把手指数肿了，把手腕数脱臼了，把眼睛数出血水来了。
+                        ---《兄弟》
+                    </li>
+               </ul>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div> 
+    </div>
+
+<!-- Swiper JS -->
+<script src="swiper.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container',{
+		direction : 'vertical',
+		followFinger : false,
+		speed:800,
+		mousewheel: true,
+		pagination : {
+			el:'.swiper-pagination',
+		},
+		on:{
+			init:function(swiper){
+		        slide=this.slides.eq(0);
+			    slide.addClass('ani-slide');
+		    },
+			transitionStart: function(){
+			    for(i=0;i<this.slides.length;i++){
+			    	slide=this.slides.eq(i);
+			        slide.removeClass('ani-slide');
+				}
+		    },
+			transitionEnd: function(){
+				slide=this.slides.eq(this.activeIndex);
+			    slide.addClass('ani-slide');
+				
+		    },
+		}
+    });
+
+</script>
+</body>
+</html>
